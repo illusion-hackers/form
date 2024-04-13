@@ -1,25 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team ILLUSION Joining Form</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-    }
-    iframe {
-      border: none;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team ILLUSION Joining Form</title>
+    
+    <style>
+
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0f0;
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #0f0;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f00;
+            color: #000;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff0000;
+        }
+
+    </style>
 </head>
 <body>
-  <iframe src="https://illusionform.pythonanywhere.com/" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    <div class="container">
+        <img src="https://i.ibb.co/kG0MP3S/Illusion.png" alt="Hackers Team Logo" class="logo">
+        <h1>Welcome to Hackers Team</h1>
+        <p>We DO With Reason, Everythings Is An Illusion!</p>
+        <form action="https://illusionform.pythonanywhere.com/apply" method="post" onsubmit="return checkForm()">
+            <label for="username">Enter Your Hacker Alias:</label>
+            <input type="text" id="username" name="username">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="instagram">Instagram ID:</label>
+            <input type="text" id="irc" name="irc">
+            <label for="telegram">Telegram ID:</label>
+            <input type="text" id="telegram" name="telegram">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <label for="skill">Skills:</label>
+            <input type="text" id="skill" name="skill">
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact">
+            <input type="submit" value="Join Team">
+        </form>
+    </div>
+    <script>
+        function checkForm() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var irc = document.getElementById("irc").value;
+            var telegram = document.getElementById("telegram").value;
+            var address = document.getElementById("address").value;
+            var skill = document.getElementById("skill").value;
+            var contact = document.getElementById("contact").value;
+if (username == ""  email == ""  irc == ""  telegram == ""  address == ""  skill == ""  contact == "") {
+                alert("Please fill out all fields before submitting.");
+                return false;
+            }
+
+            return true;
+        }
+
+        function showAlert() {
+            alert("Your information has been submitted. You will receive an email after approval.");
+        }
+    </script>
 </body>
 </html>
